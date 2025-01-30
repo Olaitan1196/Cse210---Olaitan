@@ -6,12 +6,13 @@ class Scripture
 {
     private Reference reference;
     private List<Word> words;
-    private Random random = new Random();
+    private Random random;
 
     public Scripture(Reference reference, string text)
     {
         this.reference = reference;
         words = text.Split(' ').Select(word => new Word(word)).ToList();
+        random = new Random();
     }
 
     public string GetDisplayText()
